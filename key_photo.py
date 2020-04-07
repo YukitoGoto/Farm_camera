@@ -18,6 +18,8 @@ KEY_DELAY = 1
 HOJO = "Yugawa"
 #写真のパス
 PICTURE_PATH = "picture/"
+#GoogleドライブフォルダのID
+FOLDER_ID = "17LEfqHH2OOrFI0AdsTQWE8XolsP2up83"
 
 def get_log(headname):
     nowtime = datetime.datetime.now()
@@ -47,7 +49,7 @@ else:
             elif(key_check == ord('s')):
                 picture_name = get_log(HOJO) + ".png"
                 cv2.imwrite(PICTURE_PATH + picture_name,frame_imfo)
-                f = drive.CreateFile({"title": picture_name, "mimeType": "image/png","parents": [{"kind": "drive#fileLink", "id": "17LEfqHH2OOrFI0AdsTQWE8XolsP2up83"}]})
+                f = drive.CreateFile({"title": picture_name, "mimeType": "image/png","parents": [{"kind": "drive#fileLink", "id": FOLDER_ID}]})
                 f.SetContentFile(PICTURE_PATH + picture_name)
                 f.Upload()
             else:
