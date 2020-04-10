@@ -19,7 +19,7 @@ HOJO = "Yugawa"
 #写真のパス
 PICTURE_PATH = "picture/"
 #GoogleドライブフォルダのID
-FOLDER_ID = "17LEfqHH2OOrFI0AdsTQWE8XolsP2up83"
+FOLDER_ID = "1UeneN_9RGHeLy2zKtxlgssyIDnXkG1dG"
 
 def get_log(headname):
     nowtime = datetime.datetime.now()
