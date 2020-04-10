@@ -1,1 +1,1 @@
-# Webcam-python
+# Webcam-pythonを開発するのデバッグスペースです。
