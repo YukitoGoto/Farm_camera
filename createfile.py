@@ -27,4 +27,5 @@ if(len(file_list) == 0):
     f = drive.CreateFile(FOLDER_META)
     f.Upload()
 else:
+    print(file_list[0]['id'])
     print("file_list len = " + str(len(file_list)),"already exist!")
