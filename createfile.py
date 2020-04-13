@@ -9,9 +9,9 @@ drive = GoogleDrive(gauth)
 FOLDER_NAME = "Yugawa"
 #親フォルダーID
 PARENTS_FOLDER_ID = "1UeneN_9RGHeLy2zKtxlgssyIDnXkG1dG"
-#作成するフォルダーのメタ情報
+#作成するフォルダーのメタ情報（辞書型）
 FOLDER_META = {"title": FOLDER_NAME, "mimeType": "application/vnd.google-apps.folder", "parents": [{"id": PARENTS_FOLDER_ID}]}
-#参照するフォルダーのメタ情報
+#参照するフォルダーのメタ情報（辞書型）
 """
 "q":検索
 "title = 'name'":タイトルがnameである。
