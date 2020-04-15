@@ -23,5 +23,11 @@ HOJO_A_20xxxxxx_xxxxxx.png
 ```
 撮影された写真はここに格納されます。
 
+```php:hello.php
+function hello(){
+　return "hello world!";
+}
+```
+
 # 【注意】
 **工事中**
