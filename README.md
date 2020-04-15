@@ -1,8 +1,7 @@
 # 【概要】
-[Legmin/Webcam-python]https://github.com/Legmin/Webcam-python.gitのデバックルームです。
+[Legmin/Webcam-python](https://github.com/Legmin/Webcam-python.git)のデバックルームです。
 opencvやpydriveを使っているプロジェクトです。
 
-[YukitoGoto/Farm_camera]https://github.com/YukitoGoto/Farm_camera.git
 # 【説明】
 ## folder/hojo_list.txt
 ```
