@@ -16,6 +16,7 @@ HOJO = "A"
 #圃場フォルダーID
 FOLDER_ID = "inital_value"
 
+#ログを獲得 MODE: "log":ログ形式 "picture":写真名形式
 def get_log(HEADNAME,MODE):
     nowtime = datetime.datetime.now()
     if(MODE == "log"):
@@ -25,6 +26,7 @@ def get_log(HEADNAME,MODE):
     else:
         return "get_log_error"
 
+#ログをローカルに記録
 def up_log(PATH,LOG):
     file = open(PATH,'a')
     file.write("\n" + LOG)
