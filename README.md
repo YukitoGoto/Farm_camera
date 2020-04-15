@@ -3,7 +3,8 @@ Legmin/Webcam-pythonのデバックルームです。
 opencvやpydriveを使っているプロジェクトです。
 
 # 【説明】
-```php:folder/hojo_list.txt
+```
+php:folder/hojo_list.txt
 HOJO_A
 HOJO_B
 HOJO_C
@@ -13,7 +14,8 @@ HOJO_C
 カメラを設置する圃場名を**半角、改行区切り**で入力します。
 **圃場を追加/消去**する場合、ここを書き換えます。
 
-```php:picture/
+```
+php:picture/
 HOJO_A_20xxxxxx_xxxxxx.png
 HOJO_A_20xxxxxx_xxxxxx.png
 :
