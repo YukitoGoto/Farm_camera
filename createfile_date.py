@@ -21,15 +21,20 @@ def get_hojo(PATH):
     return hojo_list
 
 #圃場フォルダーのIDをhojo_id.txtに書き込む hojo_list.txtと同じ順番に書き込むこと
-def write_hojo_id(PATH,ID,MODE):
+def write_hojo_id(PATH,HOJO,ID,MODE):
     file = open(PATH,MODE)
+    file.write(HOJO + "\n")
     file.write(ID + "\n")
     file.close()
     return ID + "\n"
 
-#指定されたメタ情報でフォルダーを作成 作成したフォルダーIDを取得:BOOL = Ture
-def create_folder(META,BOOL):
+#指定されたメタ情報で.../フォルダー・ファイルを作成、作成したフォルダーIDを取得:BOOL = Ture/ローカルのファイルをアップロード:BOOL = False
+def create_folder(META,BOOL,PATH = "initial_value"):
     f = drive.CreateFile(META)
+    if(BOOL == False):
+        f.SetContentFile(PATH)
+    else:
+        pass
     if(f.Upload() == None):
         #upload成功
         if(BOOL == True):
@@ -49,16 +54,18 @@ def create_folder(META,BOOL):
 FOLDER_LOG_PATH = "folder/folder_log.txt"
 HOJO_LIST_PATH = "folder/hojo_list.txt"
 HOJO_ID_PATH = "folder/hojo_id.txt"
-#日付フォルダー名
+#各フォルダー名
 TODAY_FOLDER_NAME = get_today()
 HOJO_FOLDER_NAME = "initial_value"
 #各フォルダーの親フォルダーID
 PARENTS_TODAY_FOLDER_ID = "1UeneN_9RGHeLy2zKtxlgssyIDnXkG1dG"
 PARENTS_HOJO_FOLDER_ID = "initial_value"
 HOJO_FOLDER_ID = "inital_value"
-#作成するフォルダーのメタ情報
+SETTING_FOLDER_ID = "1oN6nGBlrRfWevq5ebj8kKpzIfWv8GNuv"
+#作成するフォルダー・ファイルのメタ情報
 TODAY_FOLDER_META = {"title": TODAY_FOLDER_NAME, "mimeType": "application/vnd.google-apps.folder", "parents": [{"id": PARENTS_TODAY_FOLDER_ID}]}
 HOJO_FOLDER_META = {"title": "initial_value", "mimeType": "application/vnd.google-apps.folder", "parents": [{"id": "initial_value"}]}
+HOJO_ID_META = {"title": "hojo_id.txt", "mimeType": "text/plain","parents": [{"kind": "drive#fileLink", "id": SETTING_FOLDER_ID}]}
 #日付フォルダーの親フォルダーのメタ情報
 LIST_PARENTS_TODAY_FOLDER_META = {"q": "title = \"" + TODAY_FOLDER_NAME + "\" and \"" + PARENTS_TODAY_FOLDER_ID + "\" in parents"}
 
@@ -78,6 +85,8 @@ if(len(file_list) == 0):
         HOJO_FOLDER_ID = create_folder(HOJO_FOLDER_META,True)
         #最初は上書きモード:"w" それ以降は追記モード:"a"
         mode = "w" if (index == 0) else "a"
-        write_hojo_id(HOJO_ID_PATH,HOJO_FOLDER_ID,mode)
+        write_hojo_id(HOJO_ID_PATH,HOJO_FOLDER_NAME,HOJO_FOLDER_ID,mode)
+    #hojo_id.txtをフォルダーIDがSETTING_FOLDER_IDであるフォルダーにアップロード
+    create_folder(HOJO_ID_META,False,HOJO_ID_PATH)
 else:
     print("already exist")
