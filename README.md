@@ -5,18 +5,29 @@ opencvやpydriveを使って、カメラで撮った画像をGoogleDriveにア�
 # 【チュートリアル】
 サンプルプログラムを動かすまでの説明です。**git導入とgithubアカウント作成済み**として解説します。
 ## 1.作業ディレクトリにFarm_cameraをクローン
-**ターミナルやコマンドプロンプト**を立ち上げて、以下のコマンドを入力します。
+**ターミナル**または**コマンドプロンプト**を立ち上げます。
+
+まず作業ディレクトリ（作業する場所）に移動します。
 ```
 cd 作業ディレクトリのpath
+```
+以下はWindowsでデスクトップに移動する例です。
+```
+cd C:/Users/Username/Desktop
+```
+次にFarm_camera（このリポジトリ）をクローンします。
+```
 git clone https://github.com/YukitoGoto/Farm_camera.git
 ```
 作業ディレクトリに**Farm_camera**というフォルダが出来上がります。
 ## 2.Python3と必要ライブラリの導入
 **工事中**
 ## 3.認証ファイルの設定
-*client_secret.json*・*credentials.json*・*settings.yaml*が認証に使われるファイルです。デフォルトでは僕の情報になっていますから、設定し直します。
+**client_secret.json**・**credentials.json**・**settings.yaml**が認証に使われるファイルです。デフォルトでは僕の情報になっていますから、設定し直します。
 ### 3-1.認証情報の取得
-*工事中*
+以下URLにアクセスしましょう。
+
+https://console.developers.google.com/
 ### 3-2.client_secret.jsonとcredentials.jsonの書き換え
 *工事中*
 ### 3-3.settings.yamlの書き換え
@@ -24,6 +35,10 @@ git clone https://github.com/YukitoGoto/Farm_camera.git
 ## 4.プログラムの書き換えと実行
 **工事中**
 # 【説明】
+## imagesave.py
+opencvのサンプルコードです。
+## imageupload.py
+pydriveのサンプルコードです。
 ## folder/hojo_list.txt
 ```
 HOJO_A
