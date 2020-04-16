@@ -29,7 +29,7 @@ git clone https://github.com/YukitoGoto/Farm_camera.git
 
 https://console.developers.google.com/
 ### 3-2.client_secret.jsonとcredentials.jsonの書き換え
-[alt](https://github.com/YukitoGoto/Farm_camera/blob/master/picture/test.jpg)
+![alt](https://github.com/YukitoGoto/Farm_camera/blob/master/picture/test.jpg)
 *工事中*
 ### 3-3.settings.yamlの書き換え
 *工事中*
