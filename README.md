@@ -30,7 +30,7 @@ git clone https://github.com/YukitoGoto/Farm_camera.git
 https://console.developers.google.com/
 ### 3-2.client_secret.jsonとcredentials.jsonの書き換え
 ![alt](https://github.com/YukitoGoto/Farm_camera/blob/master/picture/test.jpg)
-<img src="attach:test.jpg" alt="attach:cat" title="attach:cat" width="200" height="200">
+<img src="attach:test.jpg" alt="attach:test.jpg" width="100" height="100">
 *工事中*
 ### 3-3.settings.yamlの書き換え
 *工事中*
