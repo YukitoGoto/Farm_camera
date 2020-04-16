@@ -26,6 +26,7 @@ git clone https://github.com/YukitoGoto/Farm_camera.git
 **client_secret.json**・**credentials.json**・**settings.yaml**が認証に使われるファイルです。デフォルトでは僕の情報になっていますから、設定し直します。
 ### 3-1.認証情報の取得
 以下URLにアクセスしましょう。
+
 https://console.developers.google.com/
 ### 3-2.client_secret.jsonとcredentials.jsonの書き換え
 *工事中*
