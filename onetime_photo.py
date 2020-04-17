@@ -11,25 +11,33 @@ CAM_ID = 0
 #関連のpath
 PICTURE_LOG_PATH = "folder/photo_log.txt"
 PICTURE_PATH = "picture/"
+HOJO_PATH = "folder/my_hojo.txt"
 #圃場名
-HOJO = "A"
+HOJO = "initial_value"
 #圃場フォルダーID
 FOLDER_ID = "inital_value"
 
-#ログを獲得 MODE: "log":ログ形式 "picture":写真名形式
+#ログを取得 MODE: "log":ログ形式 "picture":写真名形式
 def get_log(HEADNAME,MODE):
     nowtime = datetime.datetime.now()
     if(MODE == "log"):
-        return nowtime.strftime(HEADNAME + " %Y/%m/%d %H:%M:%S")
-    else if(MODE == "picture"):
+        return nowtime.strftime("%Y/%m/%d %H:%M:%S " + HEADNAME)
+    elif(MODE == "picture"):
         return nowtime.strftime(HEADNAME + "_%Y%m%d_%H%M%S")
     else:
         return "get_log_error"
 
 #ログをローカルに記録
 def up_log(PATH,LOG):
-    file = open(PATH,'a')
+    file = open(PATH,"a")
     file.write("\n" + LOG)
+    file.close()
+
+#自身の圃場名をmy_hojo.txtから取得
+def get_my_hojo(PATH):
+    file = open(PATH,"r")
+    my_hojo = file.readline().strip()
+    return my_hojo
     file.close()
 
 #コマンドラインから認証を行う
@@ -39,7 +47,6 @@ drive = GoogleDrive(gauth)
 
 #start
 up_log(PICTURE_LOG_PATH,get_log("START","log"))
-
 #カメラをオープン
 cam = cv2.VideoCapture(CAM_ID)
 
@@ -64,4 +71,4 @@ else:
 cam.release()
 
 #finish
-up_log(get_log("FINISH","log"))
+up_log(PICTURE_LOG_PATH,get_log("FINISH","log"))
