@@ -3,19 +3,10 @@ import datetime
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
 
-"""
-各種定数 "inital_value":プログラム中で取得
-"""
-#カメラのID 1:内蔵 0:外部
-CAM_ID = 0
-#関連のpath
-PICTURE_LOG_PATH = "folder/photo_log.txt"
-PICTURE_PATH = "picture/"
-HOJO_PATH = "folder/my_hojo.txt"
-#圃場名
-HOJO = "initial_value"
-#圃場フォルダーID
-FOLDER_ID = "inital_value"
+#コマンドラインから認証を行う
+gauth = GoogleAuth()
+gauth.CommandLineAuth()
+drive = GoogleDrive(gauth)
 
 #ログを取得 MODE: "log":ログ形式 "picture":写真名形式
 def get_log(HEADNAME,MODE):
@@ -40,10 +31,19 @@ def get_my_hojo(PATH):
     file.close()
     return my_hojo
 
-#コマンドラインから認証を行う
-gauth = GoogleAuth()
-gauth.CommandLineAuth()
-drive = GoogleDrive(gauth)
+"""
+各種定数 "inital_value":プログラム中で取得
+"""
+#カメラのID 1:内蔵 0:外部
+CAM_ID = 0
+#関連のpath
+PICTURE_LOG_PATH = "folder/photo_log.txt"
+PICTURE_PATH = "picture/"
+HOJO_PATH = "folder/my_hojo.txt"
+#圃場名
+HOJO = "initial_value"
+#圃場フォルダーID
+FOLDER_ID = "inital_value"
 
 #start
 up_log(PICTURE_LOG_PATH,get_log("START","log"))
