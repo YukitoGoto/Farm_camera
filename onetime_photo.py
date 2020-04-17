@@ -25,7 +25,7 @@ def up_log(PATH,LOG):
     file.close()
 
 #自身の圃場名をmy_hojo.txtから取得
-def get_my_hojo(PATH):
+def get_hojo(PATH):
     file = open(PATH,"r")
     my_hojo = file.readline().strip()
     file.close()
@@ -41,7 +41,7 @@ PICTURE_LOG_PATH = "folder/photo_log.txt"
 PICTURE_PATH = "picture/"
 HOJO_PATH = "folder/my_hojo.txt"
 #圃場名
-HOJO = "initial_value"
+HOJO = get_hojo(HOJO_PATH)
 #圃場フォルダーID
 FOLDER_ID = "inital_value"
 
