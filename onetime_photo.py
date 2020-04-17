@@ -37,8 +37,8 @@ def up_log(PATH,LOG):
 def get_my_hojo(PATH):
     file = open(PATH,"r")
     my_hojo = file.readline().strip()
-    return my_hojo
     file.close()
+    return my_hojo
 
 #コマンドラインから認証を行う
 gauth = GoogleAuth()
