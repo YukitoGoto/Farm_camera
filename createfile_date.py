@@ -13,7 +13,7 @@ def get_today():
     return nowtime.strftime("%Y/%m/%d")
 
 #圃場名をhojo_list.txtから文字列で取得、list化
-def get_hojo(PATH):
+def get_hojo_list(PATH):
     file = open(PATH,"r")
     #改行文字を取り除いてlist作成
     hojo_list = [i.strip() for i in file.readlines()]
@@ -84,7 +84,7 @@ if(len(today_list) == 0):
     #取得したフォルダーIDを親フォルダーとしてメタ情報に反映
     HOJO_FOLDER_META["parents"][0]["id"] = PARENTS_HOJO_FOLDER_ID
     #圃場名をlistで取得 index:カウンタ（listの添え字）
-    for index,name in enumerate(get_hojo(HOJO_LIST_PATH)):
+    for index,name in enumerate(get_hojo_list(HOJO_LIST_PATH)):
         HOJO_FOLDER_NAME = name
         #取得した圃場名をメタ情報に反映
         HOJO_FOLDER_META["title"] = HOJO_FOLDER_NAME
