@@ -40,9 +40,11 @@ def get_hojo_id(PATH,HEADNAME):
         if(id.strip() == HEADNAME):
             id_flag = True
         elif(id_flag == True):
+            file.close()
             return id
         else:
             pass
+    file.close()
     return "get_hojo_id_error"
 
 """
