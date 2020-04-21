@@ -39,7 +39,14 @@ https://console.developers.google.com/
 opencvのサンプルコードです。
 ## imageupload.py
 pydriveのサンプルコードです。
-## folder/hojo_list.txt
+## hojo/hojo_my.txt（圃場ラズパイごとに設定）
+```
+HOJO_C
+
+```
+担当する圃場名を**半角**で入力します。
+書き換えを施すラズパイは、**圃場ラズパイごと**に設定します。
+## honbu/hojo_list.txt（本部ラズパイのみ設定）
 ```
 HOJO_A
 HOJO_B
@@ -47,8 +54,8 @@ HOJO_C
 :
 :
 ```
-カメラを設置する圃場名を**半角、改行区切り**で入力します。
-**圃場を追加/消去**する場合、ここを書き換えます。
+カメラを設置する全圃場名を**半角、改行区切り**で入力します。
+**圃場を追加/消去**する場合、ここを書き換えます。書き換えを施すラズパイは、**本部ラズパイのみ**でOKです。
 ## picture/
 ```
 HOJO_A_20xxxxxx_xxxxxx.png
