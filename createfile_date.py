@@ -56,9 +56,9 @@ def create_folder(META,BOOL,PATH = "initial_value"):
 各種定数 "inital_value":プログラム中で取得
 """
 #関連のpath
-FOLDER_LOG_PATH = "folder/folder_log.txt"
-HOJO_LIST_PATH = "folder/hojo_list.txt"
-HOJO_ID_PATH = "folder/hojo_id.txt"
+FOLDER_LOG_PATH = "honbu/folder_log.txt"
+HOJO_LIST_PATH = "honbu/hojo_list.txt"
+HOJO_ID_PATH = "honbu/hojo_id.txt"
 #各フォルダー・ファイル名
 TODAY_FOLDER_NAME = get_today()
 HOJO_FOLDER_NAME = "initial_value"
