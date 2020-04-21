@@ -37,9 +37,9 @@ def get_hojo(PATH):
 #カメラのID 1:内蔵 0:外部
 CAM_ID = 0
 #関連のpath
-PICTURE_LOG_PATH = "folder/photo_log.txt"
+PICTURE_LOG_PATH = "hojo/photo_log.txt"
 PICTURE_PATH = "picture/"
-HOJO_PATH = "folder/my_hojo.txt"
+HOJO_PATH = "hojo/my_hojo.txt"
 #圃場名
 HOJO = get_hojo(HOJO_PATH)
 #圃場フォルダーID
