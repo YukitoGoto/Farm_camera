@@ -7,6 +7,17 @@ gauth = GoogleAuth()
 gauth.CommandLineAuth()
 drive = GoogleDrive(gauth)
 
+#ログを取得
+def get_log(HEADNAME):
+    nowtime = datetime.datetime.now()
+    return nowtime.strftime("%Y/%m/%d %H:%M:%S " + HEADNAME)
+
+#ログをローカルに記録
+def up_log(PATH,LOG):
+    file = open(PATH,"a")
+    file.write("\n" + LOG)
+    file.close()
+
 #年月日を文字列で取得 xxxx/xx/xx
 def get_today():
     nowtime = datetime.datetime.now()
@@ -47,10 +58,10 @@ def create_folder(META,BOOL,PATH = "initial_value"):
             f.FetchMetadata()
             return f["id"]
         else:
-            return "upload done"
+            return True
     else:
         #upload失敗
-        return "upload error"
+        return False
 
 """
 各種定数 "inital_value":プログラム中で取得
@@ -76,32 +87,46 @@ HOJO_ID_META = {"title": HOJO_ID_NAME, "mimeType": "text/plain","parents": [{"ki
 LIST_PARENTS_TODAY_FOLDER_META = {"q": "title = \"" + TODAY_FOLDER_NAME + "\" and \"" + PARENTS_TODAY_FOLDER_ID + "\" in parents"}
 LIST_HOJO_ID_META = {"q": "title = \"" + HOJO_ID_NAME + "\" and \"" + SETTING_FOLDER_ID + "\" in parents"}
 
+#start
+up_log(FOLDER_LOG_PATH,get_log("START"))
 #親フォルダーIDがPARENTS_TODAY_FOLDER_IDでタイトルがTODAY_FOLDER_NAMEであるフォルダー及びファイルを検索、listを作成
 today_list = get_list(LIST_PARENTS_TODAY_FOLDER_META)
 #today_listの要素数が0であればTODAY_FOLDER_NAMEを作成
 if(len(today_list) == 0):
     PARENTS_HOJO_FOLDER_ID = create_folder(TODAY_FOLDER_META,True)
-    #取得したフォルダーIDを親フォルダーとしてメタ情報に反映
-    HOJO_FOLDER_META["parents"][0]["id"] = PARENTS_HOJO_FOLDER_ID
-    #圃場名をlistで取得 index:カウンタ（listの添え字）
-    for index,name in enumerate(get_hojo_list(HOJO_LIST_PATH)):
-        HOJO_FOLDER_NAME = name
-        #取得した圃場名をメタ情報に反映
-        HOJO_FOLDER_META["title"] = HOJO_FOLDER_NAME
-        #HOJO_FOLDER_NAMEを作成 作成した圃場フォルダーのIDを取得
-        HOJO_FOLDER_ID = create_folder(HOJO_FOLDER_META,True)
-        #最初は上書きモード:"w" それ以降は追記モード:"a"
-        mode = "w" if (index == 0) else "a"
-        write_hojo_id(HOJO_ID_PATH,HOJO_FOLDER_NAME,HOJO_FOLDER_ID,mode)
-    #親フォルダーIDがSETTING_FOLDER_IDでタイトルがHOJO_ID_NAMEであるフォルダー及びファイルを検索、listを作成
-    id_list = get_list(LIST_HOJO_ID_META)
-    #id_listの要素数が0であればHOJO_ID_NAMEを新規作成 そうでなければ上書き
-    if(len(id_list) == 0):
-        #hojo_id.txtをフォルダーIDがSETTING_FOLDER_IDであるフォルダーにアップロード
-        create_folder(HOJO_ID_META,False,HOJO_ID_PATH)
+    if(PARENTS_HOJO_FOLDER_ID == False):
+        up_log(FOLDER_LOG_PATH,get_log("Couldn't get id: " + TODAY_FOLDER_NAME))
     else:
-        #フォルダーIDを前回時と同じものにして上書き
-        HOJO_ID_META["id"] = id_list[0]["id"]
-        create_folder(HOJO_ID_META,False,HOJO_ID_PATH)
+        log_flag = True
+        #取得したフォルダーIDを親フォルダーとしてメタ情報に反映
+        HOJO_FOLDER_META["parents"][0]["id"] = PARENTS_HOJO_FOLDER_ID
+        #圃場名をlistで取得 index:カウンタ（listの添え字）
+        for index,name in enumerate(get_hojo_list(HOJO_LIST_PATH)):
+            HOJO_FOLDER_NAME = name
+            #取得した圃場名をメタ情報に反映
+            HOJO_FOLDER_META["title"] = HOJO_FOLDER_NAME
+            #HOJO_FOLDER_NAMEを作成 作成した圃場フォルダーのIDを取得
+            HOJO_FOLDER_ID = create_folder(HOJO_FOLDER_META,True)
+            log_flag = HOJO_FOLDER_ID
+            #最初は上書きモード:"w" それ以降は追記モード:"a"
+            mode = "w" if (index == 0) else "a"
+            write_hojo_id(HOJO_ID_PATH,HOJO_FOLDER_NAME,HOJO_FOLDER_ID,mode)
+        #親フォルダーIDがSETTING_FOLDER_IDでタイトルがHOJO_ID_NAMEであるフォルダー及びファイルを検索、listを作成
+        id_list = get_list(LIST_HOJO_ID_META)
+        #id_listの要素数が0であればHOJO_ID_NAMEを新規作成 そうでなければ上書き
+        if(len(id_list) == 0):
+            #hojo_id.txtをフォルダーIDがSETTING_FOLDER_IDであるフォルダーにアップロード
+            log_flag = create_folder(HOJO_ID_META,False,HOJO_ID_PATH)
+        else:
+            #フォルダーIDを前回時と同じものにして上書き
+            HOJO_ID_META["id"] = id_list[0]["id"]
+            log_flag = create_folder(HOJO_ID_META,False,HOJO_ID_PATH)
+        if(log_flag == False):
+            up_log(FOLDER_LOG_PATH,get_log("Couldn't get any id"))
+        else:
+            up_log(FOLDER_LOG_PATH,get_log("upload done"))
 else:
-    print("already exist")
+    #フォルダーが既に存在
+    up_log(FOLDER_LOG_PATH,get_log(TODAY_FOLDER_NAME + " already exist"))
+#finish
+up_log(FOLDER_LOG_PATH,get_log("FINISH"))
