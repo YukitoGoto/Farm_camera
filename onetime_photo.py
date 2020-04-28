@@ -88,6 +88,7 @@ else:
             read_check,frame_imfo = cam.read()
             if(read_check):
                 picture_name = get_log(HOJO,"picture") + ".png"
+                cv2.putText(frame_imfo, get_log(HOJO,"log") , (0,50), cv2.FONT_HERSHEY_PLAIN, 2, (0, 255,0), 2, cv2.LINE_AA)
                 cv2.imwrite(PICTURE_PATH + picture_name,frame_imfo)
                 f = drive.CreateFile({"title": picture_name, "mimeType": "image/png","parents": [{"kind": "drive#fileLink", "id": HOJO_FOLDER_ID}]})
                 f.SetContentFile(PICTURE_PATH + picture_name)
