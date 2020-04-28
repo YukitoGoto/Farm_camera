@@ -19,7 +19,7 @@ cd C:/Users/Username/Desktop
 ```
 git clone https://github.com/YukitoGoto/Farm_camera.git
 ```
-作業ディレクトリに**Farm_camera**というフォルダが出来上がります。
+作業ディレクトリに**Farm_camera**というフォルダーが出来上がります。
 ## 2.Python3と必要ライブラリの導入
 **工事中**
 ## 3.GoogleDriveAPIの認証
@@ -44,9 +44,11 @@ pydriveのサンプルコードです。
 ## createfile.py
 `createfile_date.py`のテストコードです。
 ## createfile_date.py
-GoogleDrive上にフォルダを自動生成するプログラムです。
+GoogleDrive上にフォルダーを自動生成するプログラムです。
 ## onetime_photo.py
 写真を撮影、その後`createfile_date.py`で生成されたフォルダーにアップロードします。
+## upload_log.py
+`hojo/photo_log.txt`と`honbu/hojo_id.txt`をGoogleDrive上の`setting`というフォルダーにアップロードします。
 ## honbu/hojo_list.txt（本部ラズパイのみ設定）
 ```
 HOJO_A
@@ -120,9 +122,9 @@ save_credentials_file: /home/pi/Webcam-python/credentials.json
 #refresh tokenを取得する：True
 get_refresh_token: True
 
-#スコープを設定してフォルダ及びファイルへの消去等のアクセスを制限する：デフォルト（未設定）ではフルアクセス可能
+#スコープを設定してフォルダー及びファイルへの消去等のアクセスを制限する：デフォルト（未設定）ではフルアクセス可能
 oauth_scope:
-  #このプログラムで作成したフォルダ及びファイルのみ消去等可能：https://www.googleapis.com/auth/drive.file
+  #このプログラムで作成したフォルダー及びファイルのみ消去等可能：https://www.googleapis.com/auth/drive.file
   - https://www.googleapis.com/auth/drive.file
   #謎：ユーザーがアプリのインストールを承認するために使用される：https://www.googleapis.com/auth/drive.install
   - https://www.googleapis.com/auth/drive.install
