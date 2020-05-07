@@ -34,12 +34,12 @@ def get_list(META):
 def check_list(LIST,META,PATH):
     #LISTの要素数が0であれば新規作成 そうでなければ上書き
     if(len(LIST) == 0):
-        #hojo_id.txtをフォルダーIDがSETTING_FOLDER_IDであるフォルダーにアップロード
+        #新規アップロード
         create_folder(META,False,PATH)
     else:
         #フォルダーIDを前回時と同じものにして上書き
         META["id"] = LIST[0]["id"]
-        log_flag = create_folder(META,False,PATH)
+        create_folder(META,False,PATH)
 
 """
 各種定数
