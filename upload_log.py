@@ -42,7 +42,7 @@ def check_list(LIST,META,PATH):
         create_folder(META,False,PATH)
 
 """
-各種定数
+各種定数 "setting_XXX":setting.pyから置き換え
 """
 #関連のpath
 FOLDER_LOG_PATH = "honbu/folder_log.txt"
