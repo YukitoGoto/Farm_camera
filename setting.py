@@ -34,7 +34,7 @@ def check_list(LIST,META):
         #フォルダーIDのみを取得
         return LIST[0]["id"]
 
-#親フォルダーIDを取得
+#親フォルダーIDを取得、有効な物か確認
 def get_id():
     input_flag = False
     #list作成時のメタ情報（スコープ設定に注意）
