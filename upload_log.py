@@ -51,7 +51,7 @@ PICTURE_LOG_PATH = "hojo/photo_log.txt"
 FOLDER_LOG_NAME = "folder_log.txt"
 PICTURE_LOG_NAME = "photo_log.txt"
 #各フォルダー・ファイルID
-SETTING_FOLDER_ID = "1oN6nGBlrRfWevq5ebj8kKpzIfWv8GNuv"
+SETTING_FOLDER_ID = "setting_SETTING_FOLDER_ID"
 #作成するフォルダー・ファイルのメタ情報
 FOLDER_LOG_META = {"title": FOLDER_LOG_NAME, "mimeType": "text/plain","parents": [{"kind": "drive#fileLink", "id": SETTING_FOLDER_ID}]}
 PICTURE_LOG_META = {"title": PICTURE_LOG_NAME, "mimeType": "text/plain","parents": [{"kind": "drive#fileLink", "id": SETTING_FOLDER_ID}]}
