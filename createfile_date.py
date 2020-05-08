@@ -64,7 +64,7 @@ def create_folder(META,BOOL,PATH = "initial_value"):
         return False
 
 """
-各種定数 "inital_value":プログラム中で取得
+各種定数 "inital_value":プログラム中で取得 "setting_XXX":setting.pyから置き換え
 """
 #関連のpath
 FOLDER_LOG_PATH = "honbu/folder_log.txt"
