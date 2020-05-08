@@ -75,10 +75,10 @@ TODAY_FOLDER_NAME = get_today()
 HOJO_FOLDER_NAME = "initial_value"
 HOJO_ID_NAME = "hojo_id.txt"
 #各フォルダー・ファイルID
-PARENTS_TODAY_FOLDER_ID = "1UeneN_9RGHeLy2zKtxlgssyIDnXkG1dG"
+PARENTS_TODAY_FOLDER_ID = "setting_PARENTS_TODAY_FOLDER_ID"
 PARENTS_HOJO_FOLDER_ID = "initial_value"
 HOJO_FOLDER_ID = "inital_value"
-SETTING_FOLDER_ID = "1oN6nGBlrRfWevq5ebj8kKpzIfWv8GNuv"
+SETTING_FOLDER_ID = "setting_SETTING_FOLDER_ID"
 #作成するフォルダー・ファイルのメタ情報
 TODAY_FOLDER_META = {"title": TODAY_FOLDER_NAME, "mimeType": "application/vnd.google-apps.folder", "parents": [{"id": PARENTS_TODAY_FOLDER_ID}]}
 HOJO_FOLDER_META = {"title": "initial_value", "mimeType": "application/vnd.google-apps.folder", "parents": [{"id": "initial_value"}]}
