@@ -100,7 +100,7 @@ HOJO_A_20xxxxxx_xxxxxx.png
 
 `oauth_scope`：[GoogleDriveAPI公式](https://developers.google.com/drive/api/v3/about-auth)
 ### 設定例
-デフォルトの内容にコメントを加えました。
+デフォルトの内容にコメントを加えました。`oauth_scope`が`setting.py`の動作に異常を与えていたので、全てコメントアウトしています。
 ```
 #認証情報をsettings.yamlで設定する：settings
 client_config_backend: settings
@@ -125,11 +125,11 @@ save_credentials_file: /home/pi/Webcam-python/credentials.json
 get_refresh_token: True
 
 #スコープを設定してフォルダー及びファイルへの消去等のアクセスを制限する：デフォルト（未設定）ではフルアクセス可能
-oauth_scope:
-  #このプログラムで作成したフォルダー及びファイルのみ消去等可能：https://www.googleapis.com/auth/drive.file
-  - https://www.googleapis.com/auth/drive.file
-  #謎：ユーザーがアプリのインストールを承認するために使用される：https://www.googleapis.com/auth/drive.install
-  - https://www.googleapis.com/auth/drive.install
+#oauth_scope:
+#このプログラムで作成したフォルダー及びファイルのみ消去等可能：https://www.googleapis.com/auth/drive.file
+#  - https://www.googleapis.com/auth/drive.file
+#謎：ユーザーがアプリのインストールを承認するために使用される：https://www.googleapis.com/auth/drive.install
+#  - https://www.googleapis.com/auth/drive.install
 ```
 ## OAuthクライアントID
 認証に使えるOAuthクライアントIDは、**他のプロジェクトで未使用のもの**である必要があります。新規プロジェクトを開始する度に、OAuthクライアントID及びシークレットを取得します。
