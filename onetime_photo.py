@@ -52,7 +52,7 @@ def get_hojo_id(PATH,META,HEADNAME):
     return False
 
 """
-各種定数 "inital_value":プログラム中で取得
+各種定数 "inital_value":プログラム中で取得 "setting_XXX":setting.pyから置き換え
 """
 #カメラのID 1:内蔵 0:外部
 CAM_ID = 0
@@ -64,7 +64,7 @@ HOJO_ID_PATH = "hojo/hojo_id.txt"
 #圃場名
 HOJO = "initial_value"
 #各フォルダーID
-SETTING_FOLDER_ID = "1oN6nGBlrRfWevq5ebj8kKpzIfWv8GNuv"
+SETTING_FOLDER_ID = "setting_SETTING_FOLDER_ID"
 HOJO_FOLDER_ID = "initial_value"
 #hojo_id.txtのファイル名及びメタ情報
 HOJO_ID_NAME = "hojo_id.txt"
