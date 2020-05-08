@@ -37,7 +37,7 @@ def check_list(LIST,META):
 #親フォルダーIDを取得、有効な物か確認
 def get_id():
     input_flag = False
-    #list作成時のメタ情報（スコープ設定に注意）
+    #list作成時のメタ情報（マイドライブ（root）にアクセスするのでスコープ設定に注意）
     LIST_PARENTS_SETTING_FOLDER_ID_META = {"q": "\"root\" in parents"}
     id_list = get_list(LIST_PARENTS_SETTING_FOLDER_ID_META)
     while (input_flag == False):
