@@ -89,7 +89,7 @@ LIST_PARENTS_SETTING_FOLDER_META = {"q": "title = \"" + SETTING_FOLDER_NAME + "\
 SETTING_FOLDER_ID = check_list(get_list(LIST_PARENTS_SETTING_FOLDER_META),SETTING_FOLDER_META)
 
 #各種プログラム書き換え
-#createfiledate.py
+#createfile_date.py
 set_program(CREATEFILE_DATE_PATH,"setting_PARENTS_TODAY_FOLDER_ID",PARENTS_SETTING_FOLDER_ID)
 set_program(CREATEFILE_DATE_PATH,"setting_SETTING_FOLDER_ID",SETTING_FOLDER_ID)
 #onetime_photo.py
