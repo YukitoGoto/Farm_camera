@@ -41,9 +41,8 @@ def get_id():
     LIST_PARENTS_SETTING_FOLDER_ID_META = {"q": "\"root\" in parents"}
     id_list = get_list(LIST_PARENTS_SETTING_FOLDER_ID_META)
     while (input_flag == False):
-        print("親フォルダーIDは入力済みです。\n")
-        ID = "1UeneN_9RGHeLy2zKtxlgssyIDnXkG1dG"
-        #ID = input("親フォルダーIDを入力してください。\n")
+        #ID = "1UeneN_9RGHeLy2zKtxlgssyIDnXkG1dG"
+        ID = input("親フォルダーIDを入力してください。\n")
         #指定されたIDが存在するか確認
         for f in (id_list):
             if(f["id"] == ID):
