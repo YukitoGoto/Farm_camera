@@ -48,7 +48,7 @@ GoogleDrive上にフォルダー(20xx/xx/xx)を自動生成するプログラム
 ## onetime_photo.py
 写真を撮影、その後`createfile_date.py`で生成されたフォルダーにアップロードします。
 ## upload_log.py
-`hojo/photo_log.txt`と`honbu/hojo_id.txt`をGoogleDrive上の`setting`というフォルダーにアップロードします。
+`hojo/photo_log.txt`と`honbu/folder_log.txt`をGoogleDrive上の`setting`というフォルダーにアップロードします。
 ## setting.py
 **初期設定**を行うためのプログラムです。初回実行時、GoogleDrive上に`setting`というフォルダーを作成、及び`createfile_date.py`・`onetime_photo.py`・`upload_log.py`を書き換えます。
 ## honbu/hojo_list.txt（本部ラズパイのみ設定）
