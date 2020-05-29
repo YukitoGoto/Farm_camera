@@ -75,7 +75,7 @@ TODAY_FOLDER_NAME = get_today()
 HOJO_FOLDER_NAME = "initial_value"
 HOJO_ID_NAME = "hojo_id.txt"
 #各フォルダー・ファイルID
-PARENTS_TODAY_FOLDER_ID = "setting_PARENTS_TODAY_FOLDER_ID"
+PARENTS_TODAY_FOLDER_ID = "1UeneN_9RGHeLy2zKtxlgssyIDnXkG1dG"
 PARENTS_HOJO_FOLDER_ID = "initial_value"
 HOJO_FOLDER_ID = "inital_value"
 SETTING_FOLDER_ID = "setting_SETTING_FOLDER_ID"

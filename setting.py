@@ -34,28 +34,6 @@ def check_list(LIST,META):
         #フォルダーIDのみを取得
         return LIST[0]["id"]
 
-#親フォルダーIDを取得、有効な物か確認
-def get_id():
-    input_flag = False
-    #list作成時のメタ情報（マイドライブ（root）にアクセスするのでスコープ設定に注意）
-    LIST_PARENTS_SETTING_FOLDER_ID_META = {"q": "\"root\" in parents"}
-    id_list = get_list(LIST_PARENTS_SETTING_FOLDER_ID_META)
-    while (input_flag == False):
-        #ID = "1UeneN_9RGHeLy2zKtxlgssyIDnXkG1dG"
-        ID = input("親フォルダーIDを入力してください。\n")
-        #指定されたIDが存在するか確認
-        for f in (id_list):
-            if(f["id"] == ID):
-                input_flag = True
-            else:
-                pass
-        if(input_flag == False):
-            print("無効なIDです。\n")
-        else:
-            print("有効なIDです。\n")
-            break
-    return ID
-
 #各プログラムを書き換え箇所を置換 str1:置き換え前の文字列 str2:置き換え後の文字列
 def set_program(PATH,str1,str2):
     #書き換え後の情報を取得
@@ -78,7 +56,7 @@ UPLOAD_LOG_PATH = ABSPATH + "upload_log.py"
 #各フォルダー・ファイル名
 SETTING_FOLDER_NAME = "setting"
 #各フォルダー・ファイルID
-PARENTS_SETTING_FOLDER_ID = get_id()
+PARENTS_SETTING_FOLDER_ID = "1UeneN_9RGHeLy2zKtxlgssyIDnXkG1dG"
 SETTING_FOLDER_ID = "inital_value"
 #作成するフォルダー・ファイルのメタ情報
 SETTING_FOLDER_META = {"title": SETTING_FOLDER_NAME, "mimeType": "application/vnd.google-apps.folder", "parents": [{"id": PARENTS_SETTING_FOLDER_ID}]}
@@ -89,7 +67,6 @@ SETTING_FOLDER_ID = check_list(get_list(LIST_PARENTS_SETTING_FOLDER_META),SETTIN
 
 #各種プログラム書き換え
 #createfile_date.py
-set_program(CREATEFILE_DATE_PATH,"setting_PARENTS_TODAY_FOLDER_ID",PARENTS_SETTING_FOLDER_ID)
 set_program(CREATEFILE_DATE_PATH,"setting_SETTING_FOLDER_ID",SETTING_FOLDER_ID)
 #onetime_photo.py
 set_program(ONETIME_PHOTO_PATH,"setting_SETTING_FOLDER_ID",SETTING_FOLDER_ID)
