@@ -1,6 +1,5 @@
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
-import os
 
 #コマンドラインから認証を行う
 gauth = GoogleAuth()
@@ -49,10 +48,9 @@ def set_program(PATH,str1,str2):
 各種定数 "inital_value":プログラム中で取得
 """
 #関連のpath
-ABSPATH = os.path.abspath("setting.py").strip("setting.py")
-CREATEFILE_DATE_PATH = ABSPATH + "createfile_date.py"
-ONETIME_PHOTO_PATH = ABSPATH + "onetime_photo.py"
-UPLOAD_LOG_PATH = ABSPATH + "upload_log.py"
+CREATEFILE_DATE_PATH = "createfile_date.py"
+ONETIME_PHOTO_PATH = "onetime_photo.py"
+UPLOAD_LOG_PATH = "upload_log.py"
 #各フォルダー・ファイル名
 SETTING_FOLDER_NAME = "setting"
 #各フォルダー・ファイルID
