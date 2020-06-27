@@ -5,23 +5,44 @@ opencvやpydriveを使って、カメラで撮った画像をGoogleDriveにア�
 # 【チュートリアル】
 サンプルプログラムを動かすまでの説明です。**git導入とgithubアカウント作成済み**として解説します。
 ## 1.作業ディレクトリにFarm_cameraをクローン
-**ターミナル**または**コマンドプロンプト**を立ち上げます。
-
-まず作業ディレクトリ（作業する場所）に移動します。
-```
-cd 作業ディレクトリのpath
-```
-以下はWindowsでデスクトップに移動する例です。
-```
-cd C:/Users/Username/Desktop
-```
-次にFarm_camera（このリポジトリ）をクローンします。
+まず作業ディレクトリ（作業する場所）に、Farm_camera（このリポジトリ）をクローンします。
 ```
 git clone https://github.com/YukitoGoto/Farm_camera.git
 ```
 作業ディレクトリに**Farm_camera**というフォルダーが出来上がります。
-## 2.Python3と必要ライブラリの導入
-**工事中**
+## 2.Python3とライブラリのインストール
+## 2-1.Python3のインストール
+[参考サイト](https://www.python.jp/install/windows/index.html)に従ってPython3をインストールします。
+## 2-2.ライブラリのインストール
+「**opencv**」・「**google-api-python-client**」・「**PyDrive**」をインストールします。
+```
+pip install opencv-python
+pip install google-api-python-client
+pip install PyDrive
+```
+**「なんかインストールに失敗する！！」**
+
+pipのバージョンを確認、更新します。
+```
+pip --version
+pip install --upgrade pip
+```
+**「そもそもpip installできない！！」**
+
+Pythonのバージョンを確認します。以下はバージョン3.7.xだった場合の例です。
+```
+py --version
+Python 3.7.x
+```
+Pythonのバージョンを指定してpip installします。
+```
+py -3.7 pip install <パッケージ名>
+```
+最終奥義！（僕はこれを使いましたが良く分かりません。）
+```
+py -3.7 -m pip install --user <パッケージ名>
+```
+[参考サイト](https://gammasoft.jp/support/pip-install-error/)やGoogle「pip install 失敗」などで頑張りましょう...。
 ## 3.GoogleDriveAPIの認証
 **工事中**
 ### 3-1.認証情報の取得
