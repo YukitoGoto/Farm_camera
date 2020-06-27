@@ -11,9 +11,9 @@ git clone https://github.com/YukitoGoto/Farm_camera.git
 ```
 作業ディレクトリに**Farm_camera**というフォルダーが出来上がります。
 ## 2.Python3とライブラリのインストール
-## 2-1.Python3のインストール
+### 2-1.Python3のインストール
 [参考サイト](https://www.python.jp/install/windows/index.html)に従ってPython3をインストールします。
-## 2-2.ライブラリのインストール
+### 2-2.ライブラリのインストール
 「**opencv**」・「**google-api-python-client**」・「**PyDrive**」をインストールします。
 ```
 pip install opencv-python
