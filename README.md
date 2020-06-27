@@ -44,17 +44,16 @@ py -3.7 -m pip install --user <パッケージ名>
 ```
 [参考サイト](https://gammasoft.jp/support/pip-install-error/)やGoogle「pip install 失敗」などで頑張りましょう...。
 ## 3.GoogleDriveAPIの認証
-**工事中**
-### 3-1.認証情報の取得
-以下URLにアクセスしましょう。
-
-https://console.developers.google.com/
-### 3-2.client_secret.jsonとcredentials.jsonの書き換え
-*工事中*
-### 3-3.settings.yamlの書き換え
-*工事中*
-## 4.プログラムの書き換えと実行
-**工事中**
+### 3-1.不要なファイルを消去
+以下の**デフォルトでは僕の情報**になっています。**消去**してください。
+```
+client_secret.json
+credentials.json
+```
+### 3-2.OAthクライアントID取得
+工事中
+### 3-1.サンプルプログラムを動かして認証完了
+[Google Developers Console](https://console.developers.google.com/)にアクセスしてプロジェクトを作成します。
 # 【ソースコード・関連ファイル】
 ## imagesave.py
 opencvのサンプルコードです。
