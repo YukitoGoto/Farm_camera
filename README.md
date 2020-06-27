@@ -51,9 +51,10 @@ client_secret.json
 credentials.json
 ```
 ### 3-2.OAthクライアントID取得
-工事中
-### 3-1.サンプルプログラムを動かして認証完了
 [Google Developers Console](https://console.developers.google.com/)にアクセスしてプロジェクトを作成します。
+工事中
+### 3-3.サンプルプログラムを動かして認証完了
+工事中
 # 【ソースコード・関連ファイル】
 ## imagesave.py
 opencvのサンプルコードです。
