@@ -45,7 +45,7 @@ py -3.7 -m pip install --user <パッケージ名>
 [参考サイト](https://gammasoft.jp/support/pip-install-error/)やGoogle「pip install 失敗」などで頑張りましょう...。
 ## 3.GoogleDriveAPIの認証
 ### 3-1.不要なファイルを消去
-以下の**デフォルトでは僕の情報**になっています。**消去**してください。
+以下のファイルは、**デフォルトでは僕の情報**になっています。**消去**してください。
 
 [client_secret.json](https://github.com/YukitoGoto/Farm_camera#client_secretjson)
 
