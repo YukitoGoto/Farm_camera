@@ -46,10 +46,10 @@ py -3.7 -m pip install --user <パッケージ名>
 ## 3.GoogleDriveAPIの認証
 ### 3-1.不要なファイルを消去
 以下の**デフォルトでは僕の情報**になっています。**消去**してください。
-```
-client_secret.json
-credentials.json
-```
+
+[client_secret.json](https://github.com/YukitoGoto/Farm_camera#client_secretjson)
+
+[credentials.json](https://github.com/YukitoGoto/Farm_camera#credentialsjson)
 ### 3-2.OAthクライアントID取得
 [Google Developers Console](https://console.developers.google.com/)にアクセスしてプロジェクトを作成します。
 工事中
